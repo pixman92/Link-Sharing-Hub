@@ -1,0 +1,5 @@
+setupInbox(myEmail) //make inbox for new userl
+
+newUser() 		// new user
+
+sendMe(message, from, to) 		//send a message - will it work?
