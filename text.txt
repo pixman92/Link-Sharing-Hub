@@ -1,0 +1,3 @@
+getNewAlert() 		//get previously saved alert status
+
+makeAlertFirstTime()		//creates first time alert - false

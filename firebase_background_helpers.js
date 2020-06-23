@@ -12,7 +12,8 @@ function addDoc(root, docMe, data){
 
 var wholeDoc=[];
 var allPathsReturnred=[];
-async function getting(main, docMe, callback){
+async function getting(main, docMe, callback
+    //pulls either ood/even fields stored in Path
     wholeDoc=[];
     await db.collection(main).doc(docMe).get().then(async (snap)=>{
         console.log(snap.data());
@@ -30,6 +31,7 @@ async function getting(main, docMe, callback){
 
 var getAllArr=[];
 async function getAll(root, callback){
+    //gets all the fields in the Path
     await db.collection(root).get().then(async (snap)=>snap.forEach(async(doc)=>{
         await getAllArr.push(doc.data());
         console.log('getAllArr', getAllArr);
