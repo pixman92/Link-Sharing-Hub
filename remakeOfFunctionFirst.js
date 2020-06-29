@@ -75,12 +75,12 @@ async function updateAlert(email){
         // newAlert == true ? newAlert = false : newAlert = true;
         // await addDoc('user/'+whereIds[0]+'/alertStatus',  {'alert': newAlert});
         await getAll('user/'+whereIds[0]+'/alertStatus/', ()=>{
-            console.log(getAllArr);
+            // console.log(getAllArr);
         });
     
     }
     async function three(){
         newAlert == true ? newAlert = false : newAlert = true;
-        await addDoc('user/'+whereIds[0]+'/', 'alertStatus', {"alert": newAlert});
+        await addDoc('user/'+whereIds[0]+'/alertStatus/', getAllId[0], {"alert": newAlert});
     }
 }
