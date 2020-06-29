@@ -1,0 +1,18 @@
+db.collection('user').get().then((snap)=>{
+    snap.forEach((doc)=>{
+        console.log(doc.id, '===>', doc.data());
+});
+
+});
+
+TODO: get all of collection 
+
+
+HOW TO:
+- pull all collections  (odd amount)
+- add to (odd) 'root', <doc> placee ? - ^ returned doc.id.
+- data - {key: value}
+- {merge: true}
+
+
+addDoc('/user/KPpmMYdviPwgPt42rDWz/inbox/', 'YCUZOuLtvpkofq8mY0SP', {'recievedMessages': 'nope'});

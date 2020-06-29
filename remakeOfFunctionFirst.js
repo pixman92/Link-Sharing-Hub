@@ -2,6 +2,7 @@
 //functions - for New User & Update user
 
 async function newUser(email){
+    
 
     whereIds=[];
 
@@ -39,11 +40,12 @@ async function newUser(email){
 
 //===============================
 function updateInbox(){
+    //TODO
 
 }
 
 function updateOutbox(){
-
+    // TODO
 }
 
 var newAlert = false;
@@ -54,29 +56,31 @@ async function updateAlert(email){
         let first = await one();
         let second = await two(first);
         let third = await three(second);
+        // let fourth = await four(third);
     }catch(e){
         throw e;
     }
 
-    async function one(){
-       await adding('user', {"myEmail":email});
+    // async function one(){
+    //    await adding('user', {"myEmail":email});
 
-    }
-    async function two(tmp){
+    // }
+    async function one(tmp){
         await whereMe('user', "myEmail", email, async()=>{
             console.log(whereIds);  
             // await three();
         })
     }
-    async function three(){
+    async function two(){
         // newAlert == true ? newAlert = false : newAlert = true;
         // await addDoc('user/'+whereIds[0]+'/alertStatus',  {'alert': newAlert});
-        await getting('user/'+whereIds[0]+'/alertStatus/', ()=>{
+        await getAll('user/'+whereIds[0]+'/alertStatus/', ()=>{
             console.log(getAllArr);
         });
     
     }
-    async function four(){
-        await addDoc('user'+)
+    async function three(){
+        newAlert == true ? newAlert = false : newAlert = true;
+        await addDoc('user/'+whereIds[0]+'/', 'alertStatus', {"alert": newAlert});
     }
 }

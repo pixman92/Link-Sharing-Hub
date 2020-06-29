@@ -12,7 +12,7 @@ function addDoc(root, docMe, data){
 
 var wholeDoc=[];
 var allPathsReturnred=[];
-async function getting(main, docMe, callback
+async function getting(main, docMe, callback){
     //pulls either ood/even fields stored in Path
     wholeDoc=[];
     await db.collection(main).doc(docMe).get().then(async (snap)=>{
@@ -22,8 +22,13 @@ async function getting(main, docMe, callback
 
     await db.collection(main).doc(docMe).get().then(async (doc)=>{
         console.log(doc.id);
-        await allPathsReturnred.push(doc.id);
+        await allPathsReturnred.push(doc.id);   
     });
+
+    console.log('wholeDoc: ', wholeDoc);
+    console.log('allPathsReturnred: ', allPathsReturnred);
+
+    // path = main + '/' + docMe +
 
     callback();
 
@@ -31,6 +36,7 @@ async function getting(main, docMe, callback
 
 var getAllArr=[];
 async function getAll(root, callback){
+    getAllArr=[];
     //gets all the fields in the Path
     await db.collection(root).get().then(async (snap)=>snap.forEach(async(doc)=>{
         await getAllArr.push(doc.data());
@@ -43,7 +49,7 @@ async function getAll(root, callback){
 //where function stuff
 var whereIds=[];
 async function whereMe(root, first, second, callback){
-    // whereIds=[];
+    whereIds=[];
     tmp = db.collection(root);
 
     tmp2 = tmp.where(first, '==', second)
