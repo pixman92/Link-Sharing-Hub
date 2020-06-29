@@ -34,7 +34,7 @@ async function getting(main, docMe, callback){
 
 }
 
-var getAllArr=[]; var getAllId=[]; var BIGpath="";
+var getAllArr=[]; var getAllId=[]; var bigPATH="";
 async function getAll(root, callback){
     getAllArr=[]; getAllId=[];
     //gets all the fields in the Path
