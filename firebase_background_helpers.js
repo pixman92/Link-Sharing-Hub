@@ -34,16 +34,26 @@ async function getting(main, docMe, callback){
 
 }
 
-var getAllArr=[]; var getAllId=[];
+var getAllArr=[]; var getAllId=[]; var BIGpath="";
 async function getAll(root, callback){
     getAllArr=[]; getAllId=[];
     //gets all the fields in the Path
     await db.collection(root).get().then(async (snap)=>snap.forEach(async(doc)=>{
-        await getAllArr.push(doc.data());
         await getAllId.push(doc.id);
-        console.log('getAllArr', getAllArr);
-        console.log('getAllId', getAllId);
+        await getAllArr.push(doc.data());
+        // console.log('getAllArr', getAllArr);
+        // console.log('getAllId', getAllId);
+        console.log(doc.id, '===>', doc.data());
+
     }));
+
+    if(getAllId){
+        bigPATH = root;
+    }
+
+
+
+
     callback();
 }
 
