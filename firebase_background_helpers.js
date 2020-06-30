@@ -70,6 +70,7 @@ async function whereMe(root, first, second, callback){
         console.log(doc)
         await whereIds.push(doc.id);
     }));
+    console.log(whereIds);  
     callback();
 
 
