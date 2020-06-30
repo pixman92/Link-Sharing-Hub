@@ -1,5 +1,8 @@
 toPath = ""; fromPath = "";
 class Message{
+    // makes message
+    // from & to
+    // text & date
     constructor(fromEmail, toEmail, text){
         this.fromEmail = fromEmail;
         this.toEmail = toEmail;
