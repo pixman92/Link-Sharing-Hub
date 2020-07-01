@@ -113,7 +113,7 @@ class FriendsList{
 
 
     }
-    async removeFromList(){
+    async removeFromList(toCompare){
 
         var id = this.returnId();
         var email = this.returnEmail();
@@ -133,7 +133,7 @@ class FriendsList{
         // }
 
         async function one(){
-            await getAll('user/'+email+'/friendsList', ()=>{});
+            // await getAll('user/'+email+'/friendsList',  ()=>{});
         }
 
         async function two(){

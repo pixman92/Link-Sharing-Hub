@@ -38,29 +38,7 @@ class Inbox{
     }
 
     async changeStatus(status){
-        // changes read status of inbox
-        // var newAlert = false;
-        var email = this.returnEmail();
-        try{
-            let first = await one();
-            let second = await two(first);
-        }catch(e){
-            throw e;
-        }
-        async function one(){
-            await whereMe('user', 'myEmail', email, ()=>{});
-        }
-        async function two(){
-            // newAlert == true ? newAlert = false : newAlert = true;
-            if(status==true){
-                newAlert = true;
-            }else{
-                newAlert = false;
-            }
-
-            await addDoc('user/'+whereIds[0]+'/alertStatus', "alert", {"alert":newAlert});
-            console.log(newAlert);
-        }
+        
 
     }
     
@@ -81,3 +59,35 @@ class Inbox{
 
 
 }
+
+
+
+//=================================
+// function for change AlERT Status
+// TODO
+// changes read status of inbox
+async function changeStatus(email, status){
+        // var newAlert = false;
+        // var email = this.returnEmail();
+        try{
+            let first = await one();
+            let second = await two(first, status);
+        }catch(e){
+            throw e;
+        }
+        async function one(){
+            await whereMe('user', 'myEmail', email, ()=>{});
+        }
+        async function two(tmp, status){
+            // newAlert == true ? newAlert = false : newAlert = true;
+            // if(status==true){
+            //     newAlert = true;
+            // }else{
+            //     newAlert = false;
+            // }
+
+            newAlert = status;
+            await addDoc('user/'+whereIds[0]+'/alertStatus', "alert", {"alert":newAlert});
+            console.log(newAlert);
+        }
+    }

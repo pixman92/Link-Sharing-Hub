@@ -23,13 +23,13 @@ class Message{
         return this.date;
     }
 
-    async run(){
-        await whereMe('user', 'myEmail', this.returnToEmail(), async()=>{
-            console.log(whereIds);
-            toPath = 'user/'+whereIds[0]+'/inbox';
-            console.log(toPath);
-        });
-    }
+    // async run(){
+    //     await whereMe('user', 'myEmail', this.returnToEmail(), async()=>{
+    //         console.log(whereIds);
+    //         toPath = 'user/'+whereIds[0]+'/inbox';
+    //         console.log(toPath);
+    //     });
+    // }
 
 
     async makeMessage(){
@@ -46,7 +46,7 @@ class Message{
                 let first = await one();
                 let second = await two(first);
                 let third = await three(second);
-        
+                let fourth = await four(third);
             }
             catch(e){
                 throw(e);
@@ -89,7 +89,12 @@ class Message{
             console.log("from path ", fromPath);
             console.log("message: ", text);
 
+        
         }
+        async function four(){
+            
+        } 
+    
     }
         
     // }
