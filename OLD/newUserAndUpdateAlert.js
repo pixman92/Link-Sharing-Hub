@@ -40,12 +40,11 @@ async function newUser(email){
 
 //===============================
 function updateInbox(){
-    //TODO
-
+    
 }
 
 function updateOutbox(){
-    // TODO
+    
 }
 
 var newAlert = false;

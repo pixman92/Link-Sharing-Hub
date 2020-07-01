@@ -5,7 +5,6 @@ db.collection('user').get().then((snap)=>{
 
 });
 
-TODO: get all of collection 
 
 
 HOW TO:
