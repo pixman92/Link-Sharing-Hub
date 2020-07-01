@@ -58,24 +58,115 @@ class FriendsList{
             console.log(whereIds);
             console.log("done");
         }
+        this.setId(whereIds);        
 
     }
+    printIds(){
+        console.log(this.returnId());
+    }
+
+
+    //=========================================
+     trial(email){
+         whereMe2('user', 'myEmail', email, ()=>{});
+     }
 
     async addToList(userEmail, name){
-        await this.getWhereId();
-        await adding('user/'+this.returnId()+'/friendsList', {'userEmail': userEmail, 'name': name});        
+
+        var email = this.returnEmail();
+
+
+        try{
+            let first = await one();
+            let second = await two(first);
+            // let third = await three(second);
+        
+        }
+        catch(e){
+            throw(e);
+        }   
+
+        async function one(){
+            // await this.getWhereId();
+            await getAll('user/'+this.returnEmail()+'/friendsList', ()=>{});
+        }
+        async function two(){
+            await adding('user/'+whereIds+'/friendsList', {'userEmail': userEmail, 'name': name});        
+        }
+
+
 
     }
-    async removeFromList(toCompare){
-        await this.getWhereId();
+    async removeFromList(){
 
-        await getAll('user/'+this.returnId()+'/friendsList', ()=>{});
+        var id = this.returnId();
+        var email = this.returnEmail();
 
-        for(var i=0; i<getAllArr.length; i++){
-            if(toCompare==getAllArr[i].userEmail){
-                console.log('index ', i);
-            }
+        try{
+            let first = await one();
+            let second = await two(first);
+            // let third = await three(second);
+        
         }
+        catch(e){
+            throw(e);
+        }   
+
+        // async function one(){
+            
+        // }
+
+        async function one(){
+            await getAll('user/'+email+'/friendsList', ()=>{});
+        }
+
+        async function two(){
+            if(getAllArr)
+            for(var i=0; i<getAllArr.length; i++){
+                if(toCompare==getAllArr[i].userEmail){
+                    console.log('index ', i);
+                }
+            }
+
+        }
+
 
     }
 }
+
+var whereIds=[];
+async function whereMe2(root, first, second, callback){
+    whereIds=[];
+    var    tmp = db.collection(root);
+
+    var    tmp2 = tmp.where(first, '==', second);
+    try{
+        let first = await one();
+        let second = await two(first);
+        let third = await three(second);
+    
+    }
+    catch(e){
+        throw(e);
+    }   
+
+    async function one(){
+        await tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
+            await whereIds.push(doc.id);
+        }));
+            
+    }
+
+    async function two(){
+        console.log(doc)
+        console.log(whereIds);
+
+    }
+
+    
+    callback();
+
+
+
+}
+
