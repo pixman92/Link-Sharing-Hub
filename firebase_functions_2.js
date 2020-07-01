@@ -62,7 +62,7 @@ async function getAll(root, callback){
     try{
         let first = await one();
         let second = await two(first);
-        let third = await three(second);
+        // let third = await three(second);
     
     }
     catch(e){

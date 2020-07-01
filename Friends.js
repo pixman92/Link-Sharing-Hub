@@ -79,31 +79,36 @@ class FriendsList{
 
     //=========================================
      trial(email){
-         whereMe2('user', 'myEmail', email, ()=>{});
+         whereMe('user', 'myEmail', email, ()=>{});
      }
 
     async addToList(userEmail, name){
 
         var email = this.returnEmail();
 
+        await whereMe('user', 'myEmail', this.returnEmail(), ()=>{});
 
-        try{
-            let first = await one();
-            let second = await two(first);
-            // let third = await three(second);
+        // await getAll('user/'+whereIds[0]+'/'+this.returnEmail(), ()=>{});
+
+        await adding('user/'+whereIds[0]+'/friendsList', {'userEmail': userEmail, 'name': name});
+
+        // try{
+        //     let first = await one();
+        //     let second = await two(first);
+        //     // let third = await three(second);
         
-        }
-        catch(e){
-            throw(e);
-        }   
+        // }
+        // catch(e){
+        //     throw(e);
+        // }   
 
-        async function one(){
-            // await this.getWhereId();
-            await getAll('user/'+this.returnEmail()+'/friendsList', ()=>{});
-        }
-        async function two(){
-            await adding('user/'+whereIds+'/friendsList', {'userEmail': userEmail, 'name': name});        
-        }
+        // async function one(){
+        //     // await this.getWhereId();
+        //     await getAll('user/'+this.returnEmail()+'/friendsList', ()=>{});
+        // }
+        // async function two(){
+        //     await adding('user/'+whereIds+'/friendsList', {'userEmail': userEmail, 'name': name});        
+        // }
 
 
 
