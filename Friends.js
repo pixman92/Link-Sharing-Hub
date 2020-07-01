@@ -28,6 +28,17 @@ class FriendsList{
     }
 
 
+    //========================================
+
+    async make(){
+        var email = this.returnEmail();
+        whereMe('user', 'myEmail', email, ()=>{
+            console.log('done');
+        });
+    }
+
+    //========================================
+
     async run(){
         var meEmail = this.returnEmail();
         var tmp; var tmp2;
