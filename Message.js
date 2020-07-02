@@ -3,9 +3,10 @@ class Message{
     // makes message
     // from & to
     // text & date
-    constructor(fromEmail, toEmail, text){
+    constructor(fromEmail, toEmail, sharedURL, text){
         this.fromEmail = fromEmail;
         this.toEmail = toEmail;
+        this.sharedURL = sharedURL;
         this.text = text;
         this.date = new Date();
     }
@@ -19,6 +20,10 @@ class Message{
     returnText(){
         return this.text; 
     }
+    returnSharedURL(){
+        return this.sharedURL;
+    }
+
     returnDate(){
         return this.date;
     }
@@ -37,6 +42,7 @@ class Message{
 
         var toEmail = this.returnToEmail();
         var fromEmail = this.returnFromEmail();
+        var sharedURL = this.returnSharedURL();
         var text = this.returnText();
         var date = this.returnDate();
 
@@ -78,21 +84,22 @@ class Message{
         }
         async function three(){
             //used adding() over addDoc() - to NOT overwrite data, but add to it
-            await adding(toPath, {'messageFrom': fromEmail, 'messageTo': toEmail,'messageText': text, 'messageDate': date});
+            await adding(toPath, {'messageFrom': fromEmail, 'messageTo': toEmail, 'sharedURL': sharedURL, 'messageText': text, 'messageDate': date});
             // =============================
-            await adding(fromPath, {'messageFrom': fromEmail, 'messageTo': toEmail,'messageText': text, 'messageDate': date});
+            await adding(fromPath, {'messageFrom': fromEmail, 'messageTo': toEmail, 'sharedURL': sharedURL, 'messageText': text, 'messageDate': date});
             
             //==============================
             console.log("to: ", toEmail);
             console.log("to path ", toPath);
             console.log("From: ", fromEmail);
             console.log("from path ", fromPath);
+            console.log("messageURL: ", sharedURL);
             console.log("message: ", text);
 
         
         }
         async function four(){
-            
+
         } 
     
     }
