@@ -37,8 +37,8 @@ class Inbox{
     
     }
 
-    async changeStatus(status){
-        
+    async changeStatusOOP(status){
+        changeStatus(this.returnEmail(), true);
 
     }
     
@@ -77,7 +77,7 @@ async function changeStatus(email, status){
         }
         async function one(){
             await whereMe('user', 'myEmail', email, ()=>{});
-        }
+        }   
         async function two(tmp, status){
             // newAlert == true ? newAlert = false : newAlert = true;
             // if(status==true){

@@ -1,0 +1,15 @@
+.header {
+    padding: .5em;
+    text-align: center;
+    background:blue;
+    color: white;
+    font-size: 1.8em;
+}
+
+.textClass{
+    width: 80%;
+}
+
+.shortTextClass{
+    width: 20%  ;
+}
