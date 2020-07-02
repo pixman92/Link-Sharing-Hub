@@ -24,6 +24,11 @@ window.onload = ()=>{
     textForNewMessage.make('textarea', '', '#toField');
     
     //second box attacked from shortArea to Combo
+    textForNewMessage.make('#URL', '', "#combo");
+    textForNewMessage.make('textarea', '', '#URL');
+    textForNewMessage.addClass('#URL textarea', 'URL')
+
+
     textForNewMessage.make('#shortArea', '', '#combo')
     textForNewMessage.make('textarea', '', '#shortArea');
     textForNewMessage.addClass('#combo #toField textarea', 'shortTextClass')
@@ -31,7 +36,6 @@ window.onload = ()=>{
     textForNewMessage.make('button', 'Send', '#combo')
 
     document.querySelector('#container button').addEventListener('click', ()=>{
-        alert('yay');
     });
 
 
