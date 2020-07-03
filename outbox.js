@@ -43,5 +43,14 @@ class Outbox{
         // console.log(this.currentInbox);
     }
 
+    sortMe(){
+        //sorts array of all returned outbox items
+        var sorted = getAllArr.sort((a, b)=>{
+            if(a.messageTo < b.messageTo) {return -1;}
+            if(a.messageTo > b.messageTo) {return 1;}
+            return 0 ;
+        }); 
+        console.log('sorted', sorted);
+    }
 
 }
