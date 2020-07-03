@@ -60,7 +60,7 @@ function makeMessageGUI(){
 
 }
 //========================================
-var arrayMe = ["newMessagePage", "save"];
+var arrayMe = ["newMessagePage", "inbox", "outbox"];
 function hide(){
         for (var i = 0; i < arrayMe.length; i++) {
             document.getElementById(arrayMe[i]).style.display='none';
