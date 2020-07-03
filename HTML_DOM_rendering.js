@@ -22,6 +22,7 @@ window.onload = ()=>{
     toBox.make('#combo', '', "#container");
     textForNewMessage.make('#toField', '', '#combo');
     textForNewMessage.make('textarea', '', '#toField');
+    textForNewMessage.addClass('#toField textarea', 'toFieldClass');
     
     //second box attacked from shortArea to Combo
     textForNewMessage.make('#URL', '', "#combo");
@@ -29,13 +30,25 @@ window.onload = ()=>{
     textForNewMessage.addClass('#URL textarea', 'URL')
 
 
-    textForNewMessage.make('#shortArea', '', '#combo')
-    textForNewMessage.make('textarea', '', '#shortArea');
-    textForNewMessage.addClass('#combo #toField textarea', 'shortTextClass')
-    textForNewMessage.addClass('#combo #shortArea textarea', 'textClass');
+    textForNewMessage.make('#textForMessage', '', '#combo')
+    textForNewMessage.make('textarea', '', '#textForMessage');
+    // textForNewMessage.addClass('#combo #toField textarea', 'shortTextClass')
+    textForNewMessage.addClass('#combo #textForMessage textarea', 'textClass');
     textForNewMessage.make('button', 'Send', '#combo')
 
+
+    // NEW MESSAGE button addEventListener
     document.querySelector('#container button').addEventListener('click', ()=>{
+        //from, to, shared, text
+        var from = 'sam@gmial.com'
+        var to = document.querySelector('#combo #toField textarea').value;
+        var shared = document.querySelector('#combo #URL textarea').value;
+        var text = document.querySelector("#combo #textForMessage textarea").value;
+
+
+        var myMessage = new Message(from, to, shared, text);
+        myMessage.makeMessage()
+    
     });
 
 
@@ -44,4 +57,8 @@ window.onload = ()=>{
 
 function makeMessageGUI(){
 
+}
+
+function showAndHide(){
+    
 }

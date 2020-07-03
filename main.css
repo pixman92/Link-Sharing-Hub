@@ -11,7 +11,12 @@
     font-size: 1em;
 }
 
-.shortTextClass{
-    width: 20%  ;
+.toFieldClass{
+    width:35%;
     font-size: 1em;
 }
+
+.URL{
+    width: 65%;
+}
+
