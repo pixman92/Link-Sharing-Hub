@@ -20,3 +20,14 @@
     width: 65%;
 }
 
+
+
+/* =============== */
+/* show and hide */
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}

@@ -9,7 +9,8 @@ window.onload = ()=>{
 
     // makes nice and neat new Container
     var cont = new MountMe();
-    cont.make('#container', '', "")
+    cont.make('#newMessagePage', '', '');
+    cont.make('#container', '', "#newMessagePage");
     cont.addClass('#container', 'w3-container');
 
     var textForNewMessage = new MountMe();
@@ -58,7 +59,15 @@ window.onload = ()=>{
 function makeMessageGUI(){
 
 }
+//========================================
+var arrayMe = ["newMessagePage", "save"];
+function hide(){
+        for (var i = 0; i < arrayMe.length; i++) {
+            document.getElementById(arrayMe[i]).style.display='none';
+        }
 
-function showAndHide(){
-    
+}
+
+function show(id){
+    document.getElementById(id).style.display='block';
 }
