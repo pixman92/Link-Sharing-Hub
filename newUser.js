@@ -1,5 +1,7 @@
 
 
+//TODO - is current user new? or not?
+
 
 class NewUser{
     constructor(email){ 

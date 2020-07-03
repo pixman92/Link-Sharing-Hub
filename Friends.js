@@ -150,39 +150,39 @@ class FriendsList{
     }
 }
 
-var whereIds=[];
-async function whereMe2(root, first, second, callback){
-    whereIds=[];
-    var    tmp = db.collection(root);
+// var whereIds=[];
+// async function whereMe2(root, first, second, callback){
+//     whereIds=[];
+//     var    tmp = db.collection(root);
 
-    var    tmp2 = tmp.where(first, '==', second);
-    try{
-        let first = await one();
-        let second = await two(first);
-        let third = await three(second);
+//     var    tmp2 = tmp.where(first, '==', second);
+//     try{
+//         let first = await one();
+//         let second = await two(first);
+//         let third = await three(second);
     
-    }
-    catch(e){
-        throw(e);
-    }   
+//     }
+//     catch(e){
+//         throw(e);
+//     }   
 
-    async function one(){
-        await tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
-            await whereIds.push(doc.id);
-        }));
+//     async function one(){
+//         await tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
+//             await whereIds.push(doc.id);
+//         }));
             
-    }
+//     }
 
-    async function two(){
-        console.log(doc)
-        console.log(whereIds);
+//     async function two(){
+//         console.log(doc)
+//         console.log(whereIds);
 
-    }
+//     }
 
     
-    callback();
+//     callback();
 
 
 
-}
+// }
 
