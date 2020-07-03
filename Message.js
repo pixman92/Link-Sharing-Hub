@@ -8,7 +8,7 @@ class Message{
         this.toEmail = toEmail;
         this.sharedURL = sharedURL;
         this.text = text;
-        this.date = new Date();
+        this.date = moment().format();
     }
 
     returnToEmail(){
