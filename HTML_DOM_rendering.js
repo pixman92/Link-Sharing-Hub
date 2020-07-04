@@ -4,6 +4,12 @@ window.onload = ()=>{
     setup.addClass('#urlText', 'header');
 
 
+    var foot = new MountMe();
+    foot.make('#footMain', '', '#urlText');
+    //TODO - make button 'divs' to click => hide/show
+    foot.make('#footSub', '1', '');     
+    foot.addClass('#footSub', 'footer');
+
     makeNewMessageGUI();
 
 
