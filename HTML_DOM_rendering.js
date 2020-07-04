@@ -77,11 +77,11 @@ function makeNewMessageGUI(){
 
 
 function makeOutboxGUI(){
-    var outbox = new outbox();
-    outbox.getMessagesFro
-    
-    mOutbox();
+    var outbox = new Outbox();
+    outbox.getMessagesFromOutbox();
 
+
+    
 
 }
 
@@ -122,7 +122,7 @@ function clickable(){
 
 //========================================
 // var arrayMe = ["newMessagePage", "inbox", "outbox"];
-// var arrayMe = ["newMessagePage"];
+var arrayMe = ["newMessagePage"];
 function hide(){
         for (var i = 0; i < arrayMe.length; i++) {
             document.getElementById(arrayMe[i]).style.display='none';

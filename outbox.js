@@ -22,11 +22,14 @@ class Outbox{
         this.outbox = data;
     }
 
+    returnOutbox(){
+        return this.outbox;
+    }
 
     async getMessagesFromOutbox(){
         //fecthing all inbox entries
         //pushed into 'getAllArr'[]
-        var paths = [];
+        var paths = []; var getAllArr=[];
         await whereMe('user', 'myEmail', this.returnEmail(), async()=>{
             console.log(whereIds);
             toPath = 'user/'+whereIds[0]+'/outbox';
@@ -68,6 +71,7 @@ class Outbox{
 
             }
         }
+        this.setOutbox(this.sorted);
     }
 
 }
