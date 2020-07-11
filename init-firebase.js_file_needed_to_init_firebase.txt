@@ -1,0 +1,15 @@
+//script file "init-firebase.js" -> for linking to Firebase Database
+
+var firebaseConfig = {
+    apiKey: "",
+    authDomain: ".firebaseapp.com",
+    databaseURL: "https://.firebaseio.com",
+    projectId: "",
+    storageBucket: ".appspot.com",
+    messagingSenderId: "",
+    appId: ""
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db = firebase.firestore();
